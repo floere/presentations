@@ -1,5 +1,5 @@
 load 'loader.rb'
-Loader.load_app
+Loader.load_application
 
 load 'signal.rb'
 

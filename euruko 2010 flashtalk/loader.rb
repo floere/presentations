@@ -2,18 +2,23 @@
 #
 module Loader
   
-  def self.selfload
-    puts 'Loader loading itself.'
-    load __FILE__ # load self
-    puts 'Loader loading application.'
-    load_app
-  end
-  
+  # Load itself.
+  #
   def self.reload
-    selfload
+    load_self
+    load_application
   end
   
-  def self.load_app
+  # Load itself.
+  #
+  def self.load_self
+    puts 'Loader loading itself.'
+    load __FILE__ # load this file
+  end
+  
+  # Load the application.
+  #
+  def self.load_application
     puts 'Loading application.'
     # load parts of your app
     load 'app.rb' # change to better_app.rb while running.
